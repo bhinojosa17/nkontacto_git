@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <div id="global-header">
+        <h:graphicImage  alt="main-logo" value="/resources/images/main_logo.png"/>
+        <div id="global-additional-opt" class="i-right">
+            <ul class="form-list">
+                <li class="size-mini label-info-bordered" style="padding-left: 5px; padding-right: 5px; vertical-align: middle;">
+
+                </li>
+                <li class="size-mini label-info-bordered" style="padding-left: 5px; padding-right: 5px;">
+                    <span class="theme-green">
+                          <h:outputText value="#{user_logged.userSession.name} #{user_logged.userSession.lastname}"></h:outputText>
+                   
+
+                    </span>
+                </li>
+                <li class="size-mini" style="padding-left: 5px; padding-right: 5px;">
+                    <span class="menu_link">
+                        <h:form>
+                              <h:commandLink action="#{loginBeanController.doLogout()}" value="#{mymessages.closeSession}"/>
+                        </h:form>
+                    </span>	
+                </li>
+            </ul>
+            <ul class="form-list">
+               <li class="size-mini" style="padding-left: 5px; padding-right: 5px;">
+                    <span class="menu_link">
+                          <h:outputText value="#{user_logged.today}"/> 
+                    </span>
+                </li> 
+                 
+            </ul> 
+
+        </div>
+
+ 
+
+    </div>
+
+</ui:composition>

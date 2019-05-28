@@ -1,0 +1,47 @@
+
+#top {
+    border: 0 none;
+    padding:  0 15% 0.5% 35%;
+        position: relative;
+}
+
+#bottom {
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 1em;
+    margin: 1.2em 0px 0px 0px;
+}
+
+#left {
+     float: left;
+    margin-left: 4em;
+    margin-top: 4em;
+    overflow: hidden;
+    position: absolute;
+    width: 14em;
+    text-align: right;
+ 
+}
+
+#right {
+    float: right;
+    background-color: #FFFFFF;
+    padding: 1em;
+    width: 60%;
+}
+
+.center_content {
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 1em;
+}
+
+.left_content {
+    background-color: #FFFFFF;
+    margin-left: 17%;
+    padding: 1em;
+    width: 65%;
+}
+
+
+

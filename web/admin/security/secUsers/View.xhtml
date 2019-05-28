@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template=" ./../../../WEB-INF/templates/main_template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+       <ui:define name="left">
+        <ui:include src="/LeftMenu.xhtml"></ui:include>
+        
+    </ui:define>   
+    <ui:define name="content_top">
+        <ui:include src="/admin/mainviews/menu.xhtml">
+            <ui:param name="tabView" value="4"/>
+        </ui:include>     
+    </ui:define>
+    <ui:define name="content_altern">
+     
+        <h3>#{bundle.ViewSecUsersTitle}</h3>
+               <h:form>
+                    <p:messages globalOnly="true" ></p:messages>
+                <p:panelGrid columns="4">
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_username}"/>
+                    <p:outputLabel value="#{secUsersController.selected.username}" title="#{bundle.ViewSecUsersTitle_username}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_name}"/>
+                    <p:outputLabel value="#{secUsersController.selected.name}" title="#{bundle.ViewSecUsersTitle_name}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_lastname}"/>
+                    <p:outputLabel value="#{secUsersController.selected.lastname}" title="#{bundle.ViewSecUsersTitle_lastname}" styleClass="text_blue" />
+                     <p:outputLabel value="#{bundle.ViewSecUsersLabel_email}"/>
+                    <p:outputLabel value="#{secUsersController.selected.email}" title="#{bundle.ViewSecUsersTitle_email}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_statusReg}"/>
+                    <p:outputLabel value="#{secUsersController.selected.statusReg ? 'Activo':'Inactivo'}" title="#{bundle.ViewSecUsersTitle_statusReg}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_testEnv}"/>
+                    <p:outputLabel value="#{secUsersController.selected.testEnv}" title="#{bundle.ViewSecUsersTitle_testEnv}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_updatedBy}"/>
+                    <p:outputLabel value="#{secUsersController.selected.updatedBy}" title="#{bundle.ViewSecUsersTitle_updatedBy}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_domainId}"/>
+                    <p:outputLabel value="#{secUsersController.selected.domainId}" title="#{bundle.ViewSecUsersTitle_domainId}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_createdBy}"/>
+                    <p:outputLabel value="#{secUsersController.selected.createdBy}" title="#{bundle.ViewSecUsersTitle_createdBy}" styleClass="text_blue" />
+                    <p:outputLabel value="#{bundle.ViewSecUsersLabel_companyId}"/>
+                    <p:outputLabel value="#{secUsersController.selected.companyId}" title="#{bundle.ViewSecUsersTitle_companyId}" styleClass="text_blue" />
+                </p:panelGrid>
+                <br />
+                
+                   <span>
+                 <p:button outcome="Edit" value="#{bundle.CreateSecUsersSaveLink}" icon="ui-icon ui-icon-disk"/>
+            </span>
+            
+            <p:commandButton action="#{seUsersController.prepareCreate}" value="#{bundle.CreateSecUsersTitle}"  icon="ui-icon ui-icon-pencil" />
+            <span>
+                <p:commandButton action="#{secUsersController.destroyAndView}" value="#{bundle.ViewSecUsersDestroyLink}" icon="ui-icon ui-icon-trash"  />
+            </span>
+            <br />
+             </h:form>
+      </ui:define>
+     <ui:define name="content_middle"> 
+         <ui:include src="/admin/security/secUsers/List.xhtml"></ui:include> 
+    </ui:define>
+    </ui:composition>

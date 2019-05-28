@@ -1,0 +1,135 @@
+/*Estilos para los elementos de formulario de la aplicaci�n*/
+.text-form-gde {
+	background-image: url('images/text-bg.png');
+	background-repeat: repeat-x;
+	border-style: solid;
+	border-color: #ededed;
+	height: 28px;
+}
+
+.text-form-simple {
+	border-style: solid;
+	font-size: 12px;
+	color: #766a62;
+	border-color: #ededed;
+	height: 18px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.text-form-required {
+	background-image: url('images/required-icon.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	border-style: solid;
+	font-size: 10px;
+	color: #766a62;
+	border-color: #ededed;
+	height: 18px;
+	text-align: left;
+	padding-left: 4px;
+	padding-right: 26px;
+}
+
+.text-form-locked {
+	background-image: url('images/locked-icon.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-color: #ededed;
+	border-style: solid;
+	font-size: 12px;
+	color: #766a62;
+	border-color: #ededed;
+	height: 18px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.text-form-search {
+	background-image: url('images/search-black.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	border-style: solid;
+	font-size: 10px;
+	color: #766a62;
+	border-color: #ededed;
+	height: 18px;
+	text-align: left;
+	padding-left: 5px;
+	z-index: 2;
+}
+
+.text-form-calendar {
+	background-image: url('images/calendar-icon.png');
+	background-repeat: no-repeat;
+	background-position: right;
+	border-style: solid;
+	font-size: 12px;
+	color: #766a62;
+	border-color: #ededed;
+	height: 18px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+
+/* Elementos para layout de formularios */
+
+.form-list {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.form-list h3 { border-style: solid; border-width: 0 0 1px 0; border-color: #a6c9e2} 
+.form-list li { display: inline-block; *display:inline;} 
+
+.label-form-top {
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.label-form-error {
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: left;
+	color: red;
+}
+
+.label-form-left {
+	font-size: 10px;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.required-field-label{
+	font-size: 10px;
+	font-weight: bold;
+	color: #a6a69c;
+}
+	
+
+.size-htiny   { width: 50px; }
+.size-hmini   { width: 75px; }
+.size-hsmall  { width: 100px; }
+.size-hstd    { width: 170px; }
+.size-hinterm { width: 170px; }
+.size-hbig    { width: 305px; }
+.size-hlarge  { width: 390px; }
+.size-hhuge   { width: 600px; }
+.size-hall    { width: 830px; }
+.size-hall-margin { width: 860px}
+
+.size-htiny-height { height: 10px}
+.size-hmini-height { height: 16px}
+.size-hsmall-height { height: 20px}
+.size-hstd-height { height: 25px}
+
+.hmargin-small{ margin-left: 25px;  }
+.hmargin-std  { margin-left: 50px;  }
+.hmargin-std-r{ margin-right: 50px;  }
+.vmargin-neg-s{ margin-top: -8px;};
+	
+

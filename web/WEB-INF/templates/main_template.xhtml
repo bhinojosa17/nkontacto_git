@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Plantilla general -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>NKontacto</title>
+    </h:head>
+
+    <h:body>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet  name="./css/form-style-0.1.css"/>
+        <h:outputStylesheet name="./css/global-layout-0.1.css"/>
+        <h:outputStylesheet name="./css/global-style-0.1.css"/>
+        <h:outputStylesheet name="./custom-theme/jquery-ui-1.10.4.custom.css"/>
+        <h:outputStylesheet name="./data-tables/table_jui.css"/>
+        <h:outputStylesheet name="./css/login.css"/>
+        <h:outputStylesheet name="./css/Nkontacto.css"/>
+
+        <div id="top" >
+            <ui:insert name="top">
+                 <ui:include src="/admin/mainviews/header.xhtml">
+                  
+                </ui:include>
+            </ui:insert>
+        </div>
+        <div>
+            <div id="left">
+                <ui:insert name="left">
+
+                </ui:insert>
+            </div>
+            <div id="content" class="left_content">
+                <ui:insert name="content_top">
+                    <ui:include src="/admin/mainviews/menu.xhtml">
+                  
+                </ui:include>
+                </ui:insert>
+                <div id="altern">
+                    <ui:insert name="content_altern"></ui:insert>
+
+
+                </div>
+                <div id="display">
+                    <ui:insert name="content_middle">
+ 
+                    </ui:insert>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">
+              <ui:include src="/admin/mainviews/footer.xhtml"/>
+            </ui:insert>
+        </div>
+     </h:body>
+
+</html>

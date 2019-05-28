@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditGeoCountriesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditGeoCountriesLabel_countryId}" for="countryId" />
+                    <h:inputText id="countryId" value="#{geoCountriesController.selected.countryId}" title="#{bundle.EditGeoCountriesTitle_countryId}" required="true" requiredMessage="#{bundle.EditGeoCountriesRequiredMessage_countryId}"/>
+                    <h:outputLabel value="#{bundle.EditGeoCountriesLabel_country}" for="country" />
+                    <h:inputText id="country" value="#{geoCountriesController.selected.country}" title="#{bundle.EditGeoCountriesTitle_country}" required="true" requiredMessage="#{bundle.EditGeoCountriesRequiredMessage_country}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{geoCountriesController.update}" value="#{bundle.EditGeoCountriesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditGeoCountriesViewLink}"/>
+                <br />
+                <h:commandLink action="#{geoCountriesController.prepareList}" value="#{bundle.EditGeoCountriesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditGeoCountriesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

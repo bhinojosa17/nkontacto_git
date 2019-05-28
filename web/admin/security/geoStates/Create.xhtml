@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateGeoStatesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateGeoStatesLabel_stateId}" for="stateId" />
+                    <h:inputText id="stateId" value="#{geoStatesController.selected.stateId}" title="#{bundle.CreateGeoStatesTitle_stateId}" required="true" requiredMessage="#{bundle.CreateGeoStatesRequiredMessage_stateId}"/>
+                    <h:outputLabel value="#{bundle.CreateGeoStatesLabel_state}" for="state" />
+                    <h:inputText id="state" value="#{geoStatesController.selected.state}" title="#{bundle.CreateGeoStatesTitle_state}" required="true" requiredMessage="#{bundle.CreateGeoStatesRequiredMessage_state}"/>
+                    <h:outputLabel value="#{bundle.CreateGeoStatesLabel_countryId}" for="countryId" />
+                    <h:selectOneMenu id="countryId" value="#{geoStatesController.selected.countryId}" title="#{bundle.CreateGeoStatesTitle_countryId}" required="true" requiredMessage="#{bundle.CreateGeoStatesRequiredMessage_countryId}">
+                        <f:selectItems value="#{geoCountriesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{geoStatesController.create}" value="#{bundle.CreateGeoStatesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{geoStatesController.prepareList}" value="#{bundle.CreateGeoStatesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateGeoStatesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSecMenuTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSecMenuEmpty}" rendered="#{secMenuController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{secMenuController.items.rowCount > 0}">
+                    <h:outputText value="#{secMenuController.pagination.pageFirstItem + 1}..#{secMenuController.pagination.pageLastItem + 1}/#{secMenuController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{secMenuController.previous}" value="#{bundle.Previous} #{secMenuController.pagination.pageSize}" rendered="#{secMenuController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{secMenuController.next}" value="#{bundle.Next} #{secMenuController.pagination.pageSize}" rendered="#{secMenuController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{secMenuController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_itemId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.itemId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_textMenu}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.textMenu}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_idParent}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idParent}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_link}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.link}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_statusReg}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.statusReg}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_updatedOn}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.updatedOn}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSecMenuTitle_updatedBy}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.updatedBy}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{secMenuController.prepareView}" value="#{bundle.ListSecMenuViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{secMenuController.prepareEdit}" value="#{bundle.ListSecMenuEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{secMenuController.destroy}" value="#{bundle.ListSecMenuDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{secMenuController.prepareCreate}" value="#{bundle.ListSecMenuCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListSecMenuIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,162 @@
+/*------------------------------------------------------------------------------------------------*/
+/* Layouts y divs globales especificos*/
+#global-wrapper {
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 902px;
+}
+
+#global-header {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	border: 0px;
+	position: relative;
+}
+
+#global-additional-opt {
+	width: 400px;
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+
+#global-navigation {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 3px;
+	border: 0px;
+}
+
+#global-content {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+}
+
+#content-title {
+	text-align: left;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+/* Error message */
+.error-message {
+	margin: 5px;
+	color: #0078ae;
+}
+
+/* Estilos genericos de layout */
+.container {
+	margin: auto;
+	overflow: hidden;
+}
+
+
+/*Estilos de posicionamiento para divs genericos*/
+
+.container {
+	display: block;
+	clear: both;
+	margin-top: 10px;
+}
+
+
+
+.start {
+	display: block;
+	clear: both;
+}
+
+.e-left {
+	display: inline-block;
+	float: left;
+}
+
+.e-right {
+	display: inline-block;
+	float: right;
+}
+
+.e-center {
+	display: block;
+	margin: auto;
+}
+
+.i-left {
+	text-align: left;
+}
+
+.i-right {
+	text-align: right;
+	vertical-align: center;
+}
+
+.i-center {
+	text-align: center;
+}
+
+/* Estilos para divs de tamaño */
+/*Horizontal*/
+.h-separator {
+	width: 36px;
+}
+
+.h-small {
+	width: 110px;
+}
+
+.h-interm {
+	width: 150px;
+}
+
+.h-medium {
+	width: 223px;
+}
+
+.h-large {
+	width: 449px;
+}
+
+.h-large-ext {
+	width: 350px;
+}
+
+.h-extralarge {
+	width: 576px;
+}
+
+.h-huge {
+	width: 900px;
+}
+
+.h-full {
+	width: 100%;	
+}
+
+/*Vertical*/
+.v-small {
+	height: 10px;
+}
+
+.v-medium {
+	height: 25px;
+}
+
+.v-large {
+	height: 40px;
+}
+
+.v-large-ext {
+	height: 70px;
+}
+
+.v-extralarge {
+	height: 100px;
+}

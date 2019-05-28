@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListGeoCountriesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListGeoCountriesEmpty}" rendered="#{geoCountriesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{geoCountriesController.items.rowCount > 0}">
+                    <h:outputText value="#{geoCountriesController.pagination.pageFirstItem + 1}..#{geoCountriesController.pagination.pageLastItem + 1}/#{geoCountriesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{geoCountriesController.previous}" value="#{bundle.Previous} #{geoCountriesController.pagination.pageSize}" rendered="#{geoCountriesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{geoCountriesController.next}" value="#{bundle.Next} #{geoCountriesController.pagination.pageSize}" rendered="#{geoCountriesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{geoCountriesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListGeoCountriesTitle_countryId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.countryId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListGeoCountriesTitle_country}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.country}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{geoCountriesController.prepareView}" value="#{bundle.ListGeoCountriesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{geoCountriesController.prepareEdit}" value="#{bundle.ListGeoCountriesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{geoCountriesController.destroy}" value="#{bundle.ListGeoCountriesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{geoCountriesController.prepareCreate}" value="#{bundle.ListGeoCountriesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListGeoCountriesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

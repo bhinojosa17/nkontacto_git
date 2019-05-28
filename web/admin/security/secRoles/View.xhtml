@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template=" ./../../../WEB-INF/templates/main_template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="left">
+        <ui:include src="/LeftMenu.xhtml"></ui:include>
+
+    </ui:define>   
+    <ui:define name="content_top">
+        <ui:include src="/admin/mainviews/menu.xhtml">
+            <ui:param name="tabView" value="4"/>
+        </ui:include>     
+    </ui:define>
+    <ui:define name="content_altern">
+
+        <h3>#{bundle.ViewSecRolesTitle}</h3>
+        <h:form>
+             <p:messages globalOnly="true" ></p:messages>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="#{bundle.ViewSecRolesLabel_roleId}"/>
+                <p:outputLabel value="#{secRolesController.selected.roleId}" title="#{bundle.ViewSecRolesTitle_roleId}" styleClass="text_blue" />
+                <p:outputLabel value="#{bundle.ViewSecRolesLabel_descr}"/>
+                <p:outputLabel value="#{secRolesController.selected.descr}" title="#{bundle.ViewSecRolesTitle_descr}" styleClass="text_blue" />
+                <p:outputLabel value="#{bundle.ViewSecRolesLabel_statusReg}"/>
+                <p:outputLabel value="#{secRolesController.selected.statusReg ? 'Activo':'Inactivo'}"    title="#{bundle.ViewSecRolesTitle_statusReg}" styleClass="text_blue" />
+            </p:panelGrid>
+            <br />
+             <span>
+                 <p:button outcome="Edit" value="#{bundle.CreateSecRolesSaveLink}" icon="ui-icon ui-icon-disk"/>
+            </span>
+            
+            <p:commandButton action="#{secRolesController.prepareCreate}" value="#{bundle.CreateSecRolesTitle}"  icon="ui-icon ui-icon-pencil" />
+            <span>
+                <p:commandButton action="#{secRolesController.destroyAndView}" value="#{bundle.ViewSecRolesDestroyLink}" icon="ui-icon ui-icon-trash"  />
+            </span>
+            <br />
+        </h:form>
+    </ui:define>
+    <ui:define name="content_middle"> 
+        <ui:include src="/admin/security/secRoles/List.xhtml"></ui:include> 
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSecMenuTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_itemId}" for="itemId" />
+                    <h:inputText id="itemId" value="#{secMenuController.selected.itemId}" title="#{bundle.EditSecMenuTitle_itemId}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_itemId}"/>
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_textMenu}" for="textMenu" />
+                    <h:inputText id="textMenu" value="#{secMenuController.selected.textMenu}" title="#{bundle.EditSecMenuTitle_textMenu}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_textMenu}"/>
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_idParent}" for="idParent" />
+                    <h:inputText id="idParent" value="#{secMenuController.selected.idParent}" title="#{bundle.EditSecMenuTitle_idParent}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_idParent}"/>
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_link}" for="link" />
+                    <h:inputText id="link" value="#{secMenuController.selected.link}" title="#{bundle.EditSecMenuTitle_link}" />
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_statusReg}" for="statusReg" />
+                    <h:inputText id="statusReg" value="#{secMenuController.selected.statusReg}" title="#{bundle.EditSecMenuTitle_statusReg}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_statusReg}"/>
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_updatedOn}" for="updatedOn" />
+                    <h:inputText id="updatedOn" value="#{secMenuController.selected.updatedOn}" title="#{bundle.EditSecMenuTitle_updatedOn}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_updatedOn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditSecMenuLabel_updatedBy}" for="updatedBy" />
+                    <h:inputText id="updatedBy" value="#{secMenuController.selected.updatedBy}" title="#{bundle.EditSecMenuTitle_updatedBy}" required="true" requiredMessage="#{bundle.EditSecMenuRequiredMessage_updatedBy}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{secMenuController.update}" value="#{bundle.EditSecMenuSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditSecMenuViewLink}"/>
+                <br />
+                <h:commandLink action="#{secMenuController.prepareList}" value="#{bundle.EditSecMenuShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditSecMenuIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

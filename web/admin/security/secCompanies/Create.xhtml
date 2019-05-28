@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSecCompaniesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_companyId}" for="companyId" />
+                    <h:inputText id="companyId" value="#{secCompaniesController.selected.companyId}" title="#{bundle.CreateSecCompaniesTitle_companyId}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_companyId}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_company}" for="company" />
+                    <h:inputText id="company" value="#{secCompaniesController.selected.company}" title="#{bundle.CreateSecCompaniesTitle_company}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_company}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_address}" for="address" />
+                    <h:inputText id="address" value="#{secCompaniesController.selected.address}" title="#{bundle.CreateSecCompaniesTitle_address}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_address}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_zipCode}" for="zipCode" />
+                    <h:inputText id="zipCode" value="#{secCompaniesController.selected.zipCode}" title="#{bundle.CreateSecCompaniesTitle_zipCode}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_zipCode}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_contact}" for="contact" />
+                    <h:inputText id="contact" value="#{secCompaniesController.selected.contact}" title="#{bundle.CreateSecCompaniesTitle_contact}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_contact}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_phoneNumber}" for="phoneNumber" />
+                    <h:inputText id="phoneNumber" value="#{secCompaniesController.selected.phoneNumber}" title="#{bundle.CreateSecCompaniesTitle_phoneNumber}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_phoneNumber}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_contactMail}" for="contactMail" />
+                    <h:inputText id="contactMail" value="#{secCompaniesController.selected.contactMail}" title="#{bundle.CreateSecCompaniesTitle_contactMail}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_contactMail}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_updatedOn}" for="updatedOn" />
+                    <h:inputText id="updatedOn" value="#{secCompaniesController.selected.updatedOn}" title="#{bundle.CreateSecCompaniesTitle_updatedOn}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_updatedOn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_statusReg}" for="statusReg" />
+                    <h:inputText id="statusReg" value="#{secCompaniesController.selected.statusReg}" title="#{bundle.CreateSecCompaniesTitle_statusReg}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_statusReg}"/>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_updatedBy}" for="updatedBy" />
+                    <h:selectOneMenu id="updatedBy" value="#{secCompaniesController.selected.updatedBy}" title="#{bundle.CreateSecCompaniesTitle_updatedBy}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_updatedBy}">
+                        <f:selectItems value="#{secUsersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateSecCompaniesLabel_city}" for="city" />
+                    <h:selectOneMenu id="city" value="#{secCompaniesController.selected.city}" title="#{bundle.CreateSecCompaniesTitle_city}" required="true" requiredMessage="#{bundle.CreateSecCompaniesRequiredMessage_city}">
+                        <f:selectItems value="#{geoCitiesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{secCompaniesController.create}" value="#{bundle.CreateSecCompaniesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{secCompaniesController.prepareList}" value="#{bundle.CreateSecCompaniesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSecCompaniesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

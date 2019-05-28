@@ -1,0 +1,679 @@
+/* --------------------------------------------------------------------------------------------------
+Archivo de estilos globales de la aplicaci�n, aqui se definen los estilos que afectan multiples
+paginas dentro de la aplicaci�n.
+--------------------------------------------------------------------------------------------------*/
+
+/* Elementos Globales*/
+body {
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-size: 12px;
+	color: #2e90bd;
+}
+
+body p {
+	font-size: 12px;
+	font-weight: normal;
+	color: #2e90bd;
+}
+
+body h1 {
+	font-size: 18px;
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-weight: bold;
+	color: #0078ae;
+}
+
+body h2 {
+	font-size: 16px;
+	font-weight: bold;
+	color: #0078ae;
+}
+
+body h3 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #90c05d;
+}
+
+a img {border: none; }
+
+.theme-green {
+	color: #90c05d;
+}
+
+.dark-gray {
+	color: #e05606;
+}
+
+.light-gray {
+	color: #a09d96;
+}
+
+.label-bolder {
+	font-weight: bold;
+}
+
+.label-info-bordered {
+	border-right-style: solid; 
+	border-right-color: #0078ae; 
+	border-right-width: 1px
+}
+
+.info-message{
+	padding-left: 10px; 
+	background-color: #f8f8f8; 
+	border-color: #a6c9e2; 
+	border-width: 1px; 
+	border-style: solid;
+}
+
+.info-message p{
+	margin: 5px;
+}
+
+.bold{
+	font-weight: bold;	
+}
+
+.info-message strong{
+	color: #90c05d;
+}	
+
+/* Estilos para Enlaces de la aplicaci�n*/
+.menu-tab {
+	height: 12px
+}
+
+.menu_link_active A:link {
+	font-family: "Arial", "Helvetica", sans-serif;
+	color: #90c05d;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.menu_link A:link {
+	font-family: "Arial", "Helvetica", sans-serif;
+	color: #0078ae;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.menu_link A:visited {
+	font-family: "Arial", "Helvetica", sans-serif;
+	color: #0078ae;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.menu_link A:hover {
+	font-family: "Arial", "Helvetica", sans-serif;
+	color: #90c05d;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.menu_link A:active {
+	font-family: "Arial", "Helvetica", sans-serif;
+	color: #90c05d;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+
+a.submenu-active:link    { color: #90c05d; font-weight: bold; }
+a.submenu-active:visited { color: #90c05d; font-weight: bold; }
+a.submenu-active:hover   { color: #90c05d; font-weight: bold; }
+
+.menu_separator { font-size: 14px; margin-left: 2px; margin-right: 2px;}
+
+.ui-widget-content {color: #0078AE}
+
+
+/* Estilos de tama�o */
+.extralarge {
+	width: 400px;
+}
+
+.large-ext {
+	width: 300px;
+}
+
+.large {
+	width: 200px;
+}
+
+.interm {
+	width: 150px;
+}
+
+.medium {
+	width: 100px;
+}
+
+.small {
+	width: 75px;
+}
+
+.extrasmall {
+	width: 22px;
+}
+
+.small-size {
+	width: 20px;
+}
+
+.normal-size {
+	width: 50px;
+}
+
+.middle-size {
+	width: 100px;
+}
+
+.full-size {
+	width: 500px;
+}
+
+.margin-top {
+	margin-top: 10px;
+}
+
+.no-margin-top {
+	margin-top: 0px;
+}
+
+.margin-top-small {
+	margin-top: 5px;
+}
+
+
+.margin-bottom {
+	margin-top: 10px;
+}
+
+.margin-both {
+	margin-top: 5px;
+}
+
+.margin-left {
+	margin-left: 10px;
+}
+
+.margin-right {
+	margin-right: 10px;
+}
+
+/*Estilo de Menu */
+#menu-tabs .ui-state-default a {
+	font-weight: bold;
+}
+
+#menu-tabs .ui-state-active a {
+	font-weight: bold;
+}
+
+.main-menu-div{
+	height: 14px;	
+}
+
+
+
+/*Estilos Especificos por milestone*/
+.ae {
+	background-color: #C3C3C3;
+	color: white;
+}
+
+.cof {
+	background-color: #7F7F7F;
+	color: white;
+}
+
+.cos {
+	background-color: #FFC90E;
+	color: white;
+}
+
+.fne {
+	background-color: #22B14C;
+	color: white;
+}
+
+.int {
+	background-color: #3F48CC;
+	color: white;
+}
+
+.lpc {
+	background-color: #ED1C24;
+	color: white;
+}
+
+.nsa {
+	background-color: #E05206;
+	color: white;
+}
+
+.opt {
+	background-color: #000000;
+	color: white;
+}
+
+.sac {
+	background-color: #C3C3C3;
+	color: white;
+}
+
+.src {
+	background-color: #A6D8FD;
+	color: white;
+}
+
+.wic {
+	background-color: #A349A4;
+	color: white;
+}
+
+.na {
+	background-color: #FEF4B7;
+	color: black;
+}
+
+.milestone-default {
+	background-color: #c0c0c0;
+	color: white;
+}
+
+
+.tracking_site{
+	background-color: #e05206;
+	color: white;
+	font-weight: bolder;	
+}
+/* Estilos de Jquery para elementos select*/
+.ui-combobox {
+	position: relative;
+	display: inline-block;
+}
+
+.ui-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* adjust styles for IE 6/7 */
+	*height: 1.7em;
+	*top: 0.1em;
+}
+
+.ui-combobox-input {
+	margin: 0;
+	padding: 0.3em;
+}
+
+.ui-autocomplete {
+	max-height: 200px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding to account for vertical scrollbar */
+	padding-right: 20px;
+}
+/* IE 6 doesn't support max-height
+	 * we use height instead, but this forces the menu to always be this tall
+	 */
+* html .ui-autocomplete {
+	height: 100px;
+}
+
+/*Date picker*/
+.ui-datepicker-trigger {
+	display: inline;
+	margin: 0px -0px -6px 0px;
+}
+
+/*Estilos para el buscador de sitios */
+.form-text-search-orange {
+	border-style: solid;
+	border-color: #ededed;
+	height: 24px;
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-weight: bold;
+	color: #0078ae;
+	outline: none;
+}
+
+.searchSubmit {
+	background: transparent url("images/blue-search-icon.png") no-repeat;
+	background-position: center;
+	width: 26px;
+	height: 30px;
+	border: none;
+	cursor: auto;
+}
+
+#searchSiteWrapperSpan{
+	background-color: #f0f0f0;  
+	display: inline-block; 
+	margin-left: -8px
+}
+
+.message-wrapper {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a6c9e2;
+}
+
+.info-inner {
+	background-image: url('images/info.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-align: left;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #766a62;
+	font-size: 12px;
+	margin-left: 20px;
+	padding-left: 60px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.error-inner {
+	background-image: url('images/error.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-align: left;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	color: #766a62;
+	font-size: 12px;
+	margin-left: 20px;
+	padding-left: 60px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/*Estilos de tablas */
+table {
+	*border-collapse: collapse; /* IE7 and lower */
+	border-spacing: 0;
+}
+
+.rounded-span {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 1px #ccc;
+	-moz-box-shadow: 0 1px 1px #ccc;
+	box-shadow: 0 1px 1px #ccc;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.rounded {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 1px #ccc;
+	-moz-box-shadow: 0 1px 1px #ccc;
+	box-shadow: 0 1px 1px #ccc;
+}
+
+/*Examples from:  http://www.red-team-design.com/practical-css3-tables-with-rounded-corners */
+.bordered {
+	border: solid #ccc 1px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 1px #ccc;
+	-moz-box-shadow: 0 1px 1px #ccc;
+	box-shadow: 0 1px 1px #ccc;
+}
+
+.bordered tr:hover {
+	background: #fbf8e9;
+	-o-transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+.bordered td,.bordered th {
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 5px;
+	text-align: left;
+}
+
+.bordered th {
+	background-color: #e4e4e4;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4),
+		to(#e4e4e9) );
+	background-image: -webkit-linear-gradient(top, #e4e4e4, #e4e4e9);
+	background-image: -moz-linear-gradient(top, #e4e4e4, #e4e4e9);
+	background-image: -ms-linear-gradient(top, #e4e4e4, #e4e4e9);
+	background-image: -o-linear-gradient(top, #e4e4e4, #e4e4e9);
+	background-image: linear-gradient(top, #e4e4e4, #e4e4e9);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	border-top: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.bordered td:first-child,.bordered th:first-child {
+	border-left: none;
+}
+
+.bordered th:first-child {
+	-moz-border-radius: 6px 0 0 0;
+	-webkit-border-radius: 6px 0 0 0;
+	border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+	-moz-border-radius: 0 6px 0 0;
+	-webkit-border-radius: 0 6px 0 0;
+	border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child {
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+	-moz-border-radius: 0 0 0 6px;
+	-webkit-border-radius: 0 0 0 6px;
+	border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+	-moz-border-radius: 0 0 6px 0;
+	-webkit-border-radius: 0 0 6px 0;
+	border-radius: 0 0 6px 0;
+}
+
+/* Another Table Style */
+.zebra td,.zebra th {
+	padding: 5px;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.zebra tbody tr:nth-child(even) {
+	background: #f5f5f5;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+}
+
+.zebra th {
+	text-align: left;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+	border-bottom: 1px solid #ccc;
+	background-color: #eee;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5),
+		to(#eee) );
+	background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -moz-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -ms-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -o-linear-gradient(top, #f5f5f5, #eee);
+	background-image: linear-gradient(top, #f5f5f5, #eee);
+}
+
+.zebra th:first-child {
+	-moz-border-radius: 6px 0 0 0;
+	-webkit-border-radius: 6px 0 0 0;
+	border-radius: 6px 0 0 0;
+}
+
+.zebra th:last-child {
+	-moz-border-radius: 0 6px 0 0;
+	-webkit-border-radius: 0 6px 0 0;
+	border-radius: 0 6px 0 0;
+}
+
+.zebra th:only-child {
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.zebra tfoot td {
+	border-bottom: 0;
+	border-top: 1px solid #fff;
+	background-color: #f1f1f1;
+}
+
+.zebra tfoot td:first-child {
+	-moz-border-radius: 0 0 0 6px;
+	-webkit-border-radius: 0 0 0 6px;
+	border-radius: 0 0 0 6px;
+}
+
+.zebra tfoot td:last-child {
+	-moz-border-radius: 0 0 6px 0;
+	-webkit-border-radius: 0 0 6px 0;
+	border-radius: 0 0 6px 0;
+}
+
+.zebra tfoot td:only-child {
+	-moz-border-radius: 0 0 6px 6px;
+	-webkit-border-radius: 0 0 6px 6px border-radius ;
+}
+
+.green-degraded {
+	background-image: url('images/green-degraded.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.yellow-degraded {
+	background-image: url('images/yellow-degraded.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.red-degraded {
+	background-image: url('images/red-degraded.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.gray-degraded {
+	background-image: url('images/gray-degraded.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+.bordered-bottom {
+	border-bottom-style: solid;
+	background-color: #f8f8f8;  
+	border-bottom-color: #a6c9e2; 
+	border-bottom-width: 3px;
+	padding: 4px;
+}
+
+.bordered-bottom-warning {
+	border-bottom-style: solid;
+	color: #e05206;
+	background-color: #fff;  
+	border-bottom-color: #e05206; 
+	border-bottom-width: 3px;
+	padding: 4px;
+}
+
+.orange-bullet {
+	background-image: url('images/orange-bullet.png');
+	background-position: left;
+	padding-left: 15px;	
+	background-repeat: no-repeat;
+}
+
+.gray-bullet {
+	background-image: url('images/gray-bullet.png');
+	background-position: left;
+	padding-left: 15px;
+	background-repeat: no-repeat;
+}
+
+.green-bullet {
+	background-image: url('images/green-bullet.png');
+	background-position: left;
+	padding-left: 15px;
+	background-repeat: no-repeat;
+}
+
+.green-bullet-circle {
+	background-image: url('images/green-circle-small.png'); 
+	padding-left: 20px;
+	background-repeat: no-repeat;
+}
+
+.gray-bullet-circle {
+	background-image: url('images/gray-circle-small.png'); 
+	padding-left: 20px;
+	background-repeat: no-repeat;
+}
+
+.signal-icon {
+	background-image: url('images/signal-icon.png'); 
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	padding-top: 2px;
+}
+
+
+.green-label	{font-weight: bold; background-color: #00b0f0; color: #ffffff; display: inline-block; text-align: center;}
+.yellow-label	{font-weight: bold; background-color: #00b0f0; color: #ffc000; display: inline-block; text-align: center;}
+.red-label		{font-weight: bold; background-color: #00b0f0; color: #ff0000; display: inline-block; text-align: center;}
+.blue-label		{font-weight: bold; background-color: #00b0f0; color: #ff0000; display: inline-block; text-align: center;}
+
+
+
+/*Estilo para el msdropdown select de Country selection */
+#countryDiv .dd .ddTitle {
+	background:transparent;
+	border : none;
+	
+}
+
+/*Estilo para la tabla de edicion de project milestones  */
+
+#milestoneEditTable.zebra td,.zebra th {
+	padding: 1px;
+}
+
+
+
+
+
+

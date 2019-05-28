@@ -1,0 +1,28 @@
+
+
+/* Estilos migrados de la página Login */
+
+.center-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#login-form-div {
+    width: 250px;
+    height: 250px;
+}
+
+.login-element {
+    width: 230px;
+
+}
+
+
+.login_width{
+    width: 240px;
+    margin-left: 0em
+}

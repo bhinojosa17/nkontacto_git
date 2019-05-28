@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewGeoStatesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGeoStatesLabel_stateId}"/>
+                    <h:outputText value="#{geoStatesController.selected.stateId}" title="#{bundle.ViewGeoStatesTitle_stateId}"/>
+                    <h:outputText value="#{bundle.ViewGeoStatesLabel_state}"/>
+                    <h:outputText value="#{geoStatesController.selected.state}" title="#{bundle.ViewGeoStatesTitle_state}"/>
+                    <h:outputText value="#{bundle.ViewGeoStatesLabel_countryId}"/>
+                    <h:outputText value="#{geoStatesController.selected.countryId}" title="#{bundle.ViewGeoStatesTitle_countryId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{geoStatesController.destroyAndView}" value="#{bundle.ViewGeoStatesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGeoStatesEditLink}"/>
+                <br />
+                <h:commandLink action="#{geoStatesController.prepareCreate}" value="#{bundle.ViewGeoStatesCreateLink}" />
+                <br />
+                <h:commandLink action="#{geoStatesController.prepareList}" value="#{bundle.ViewGeoStatesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGeoStatesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

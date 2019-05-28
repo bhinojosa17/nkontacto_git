@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" 
+                xmlns:p="http://primefaces.org/ui">
+    <h:form rendered="#{secUsersController.items.rowCount > 0}">
+        <h3>#{bundle.ListSecUsersTitle}</h3>
+         <h:outputText escape="false" value="#{bundle.ListSecUsersEmpty}" rendered="#{secUsersController.items.rowCount == 0}"/>
+        <h:panelGroup rendered="#{secUsersController.items.rowCount > 0}">
+            <p:dataTable value="#{secUsersController.items}" var="item"  paginator="true" rows="5">
+                <p:column styleClass="menu_link" sortBy="#{item.userId}" headerText="#{bundle.ListSecUsersTitle_userId}">
+                    <p:commandLink   value="#{item.username}"  action="#{secUsersController.prepareView}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecUsersTitle_name}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.name}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecUsersTitle_lastname}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.lastname}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecUsersTitle_email}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.email}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecUsersTitle_statusReg}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.statusReg ? 'Activo':'Inactivo'}" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecUsersTitle_companyId}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.companyId}"/>
+                </p:column>
+              
+            </p:dataTable>
+        </h:panelGroup>
+        <br />
+     </h:form>
+
+</ui:composition>

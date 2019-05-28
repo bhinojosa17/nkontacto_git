@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+          <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet  name="./css/form-style-0.1.css"/>
+        <h:outputStylesheet name="./css/global-layout-0.1.css"/>
+        <h:outputStylesheet name="./css/global-style-0.1.css"/>
+        <h:outputStylesheet name="./custom-theme/jquery-ui-1.10.4.custom.css"/>
+        <h:outputStylesheet name="./data-tables/table_jui.css"/>
+        <h:outputStylesheet name="./css/login.css"/>
+        <h:outputStylesheet name="./css/Nkontacto.css"/>
+
+       <h:form>  
+         <p:panelMenu style="width:200px">  
+        <p:submenu label="Permisos">  
+            <p:menuitem value="Perfiles" url="#{request.contextPath}/faces/admin/security/secProfiles/Create.xhtml"  />  
+            <p:menuitem value="Roles" url="#{request.contextPath}/faces/admin/security/secRoles/Create.xhtml" />  
+            <p:menuitem value="Asignación de Roles" url="#{request.contextPath}/faces/admin/security/secProfilesRoles/Create.xhtml"  /> 
+        </p:submenu>  
+        <p:submenu label="Usuarios" >  
+            <p:menuitem value="Registro" url="#{request.contextPath}/faces/admin/security/secUsers/Create.xhtml" />  
+        </p:submenu>  
+        <p:separator />  
+        <p:submenu label="Geográficos" >  
+                      <p:menuitem value="Países"  icon="ui-icon-home" />  
+                    <p:menuitem value="Estados" url="http://www.primefaces.org/documentation.html" icon="ui-icon-document" />  
+                    <p:menuitem value="Ciudades" url="http://www.primefaces.org/downloads.html" icon="ui-icon-arrowthick-1-s" />  
+                    <p:menuitem value="Support" url="http://www.primefaces.org/support.html" icon="ui-icon-wrench" />  
+             </p:submenu>  
+    </p:panelMenu>  
+ 
+</h:form>  
+             
+    </h:body>
+</html>
+

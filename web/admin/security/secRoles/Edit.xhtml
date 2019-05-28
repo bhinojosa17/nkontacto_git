@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template=" ./../../../WEB-INF/templates/main_template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="left">
+        <ui:include src="/LeftMenu.xhtml"></ui:include>
+
+    </ui:define>
+    <ui:define name="content_top">
+        <ui:include src="/admin/mainviews/menu.xhtml">
+            <ui:param name="tabView" value="4"/>
+        </ui:include>     
+    </ui:define>
+    <ui:define name="content_altern">
+        <h3>#{bundle.EditSecRolesTitle}</h3>
+
+        <h:form>
+            <p:messages globalOnly="true"/>
+            <p:panelGrid columns="2">
+                <h:outputLabel value="#{bundle.EditSecRolesLabel_roleId}" for="roleId" />
+                <p:inputText id="roleId" styleClass="text_blue small_width" maxlength="20" value="#{secRolesController.selected.roleId}" title="#{bundle.EditSecRolesTitle_roleId}" required="true" />
+                <h:outputLabel value="#{bundle.EditSecRolesLabel_descr}" for="descr" />
+                <p:inputText id="descr" styleClass="text_blue medium_width" maxlength="50" value="#{secRolesController.selected.descr}" title="#{bundle.EditSecRolesTitle_descr}" required="true" />
+                <h:outputLabel value="#{bundle.EditSecRolesLabel_statusReg}" for="statusReg" />
+                <p:selectBooleanCheckbox id="statusReg" value="#{secRolesController.selected.statusReg}" required="true" />
+            </p:panelGrid>
+            <br />
+            <p:commandButton id="editRolButton" ajax="false" action="#{secRolesController.update}" value="#{bundle.EditSecRolesSaveLink}" icon="ui-icon ui-icon-disk"/>
+
+            <br />
+
+        </h:form>
+    </ui:define>
+    <ui:define name="content_middle"> 
+        <ui:include src="/admin/security/secRoles/List.xhtml"></ui:include> 
+    </ui:define>
+</ui:composition>

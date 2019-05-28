@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewGeoCitiesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGeoCitiesLabel_cityId}"/>
+                    <h:outputText value="#{geoCitiesController.selected.cityId}" title="#{bundle.ViewGeoCitiesTitle_cityId}"/>
+                    <h:outputText value="#{bundle.ViewGeoCitiesLabel_city}"/>
+                    <h:outputText value="#{geoCitiesController.selected.city}" title="#{bundle.ViewGeoCitiesTitle_city}"/>
+                    <h:outputText value="#{bundle.ViewGeoCitiesLabel_stateId}"/>
+                    <h:outputText value="#{geoCitiesController.selected.stateId}" title="#{bundle.ViewGeoCitiesTitle_stateId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{geoCitiesController.destroyAndView}" value="#{bundle.ViewGeoCitiesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGeoCitiesEditLink}"/>
+                <br />
+                <h:commandLink action="#{geoCitiesController.prepareCreate}" value="#{bundle.ViewGeoCitiesCreateLink}" />
+                <br />
+                <h:commandLink action="#{geoCitiesController.prepareList}" value="#{bundle.ViewGeoCitiesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGeoCitiesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

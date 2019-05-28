@@ -1,0 +1,123 @@
+/** Estilos */
+h3{
+    color: #90C05D;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+A:link {text-decoration: none; color: #2E90BD}
+A:visited {text-decoration: none; color: #2E90BD }
+A:active {text-decoration: underline; font-weight: bold};
+A:hover {text-decoration: underline; color: #90C05D; font-weight: bold}
+
+.linksLeftMenu{
+    text-align: right !important;
+    padding: 0.5em;
+    font-size: 1.5em !important ;
+    
+}
+.headerTable{       
+    width: auto;
+    height:auto;
+    margin: 0;
+    padding: 0.3em;
+    font-family: "Arial", "Helvetica", sans-serif;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: 50% 50%;
+    background-color: #E17009;
+    border: 1px solid #4297D7;
+    color: #EAF5F7;
+    min-height: 0;
+    font-size: 0.9em;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: none;
+
+}
+
+.evenRowTable{
+    background-color: #F8F8F8;
+    border-spacing: 0;
+    color: #2E90BD;
+
+}
+
+.oddRowTable{
+    background-color: #FFFFFF;
+    color: #2E90BD; 
+    border-spacing: 0;
+
+}
+
+.text_blue
+{
+    color: #2E90BD;
+ }
+ 
+ .bigger_size
+ {
+     font-size: 14px;
+     
+ }
+
+
+.logoMain {
+    background-image: url('../images/newLogoMiddle.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 5em 5em 5em 5em;
+    overflow: hidden;
+    height:122px;
+    width: 385px;
+}
+
+#display
+{
+    margin-top: 1%;
+    width: 70%;
+}
+
+.inputNoStylePF{
+    background-image:none;
+    background-color:  #FFFFFF
+ }
+
+.small_width{
+    width: 8em;
+
+}
+
+.normal_width{
+    width: 13em;
+
+}
+
+
+.medium_width{
+    width: 30em;
+}
+
+
+.large_width{
+
+    width: 50em; 
+}
+
+/** Estilos sobrescritos de primeface **/
+.ui-panelgrid td {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0px;
+    padding: 2px 5px;
+}
+
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+    border-style: solid;
+    border-width: 0.1em;
+    overflow: hidden;
+    padding: 0.1em 0.3em;
+    white-space: nowrap;   
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" 
+                xmlns:p="http://primefaces.org/ui">
+    <h:form rendered ="#{secProfilesController.items.rowCount>0}">
+        <h3>#{bundle.ListSecProfilesTitle}</h3>
+        <h:outputText escape="false" value="#{bundle.ListSecProfilesEmpty}" rendered="#{secProfilesController.items.rowCount == 0}"/>
+        <h:panelGroup>
+            <p:dataTable value="#{secProfilesController.items}"   var="item" paginator="true" rows="5" >
+                <p:column styleClass="menu_link" sortBy="#{item.profileId}" headerText="#{bundle.ListSecProfilesTitle_profileId}">
+                    <p:commandLink   value="#{item.profileId}"  action="#{secProfilesController.prepareView}" />    
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecProfilesTitle_descr}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.descr}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListSecProfilesTitle_statusReg}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.statusReg ? 'Activo':'Inactivo'}"/>
+                </p:column>
+            </p:dataTable>
+        </h:panelGroup>
+    </h:form>
+</ui:composition>

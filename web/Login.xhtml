@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='iso-8859-1'  ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login</title>    
+          <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet  name="./css/form-style-0.1.css"/>
+        <h:outputStylesheet name="./css/global-layout-0.1.css"/>
+        <h:outputStylesheet name="./css/global-style-0.1.css"/>
+        <h:outputStylesheet name="./css/login.css"/>
+        <h:outputStylesheet name="./custom-theme/jquery-ui-1.10.4.custom.css"/>
+        <h:outputStylesheet name="./data-tables/table_jui.css"/>
+    </h:head>
+    <h:body>
+        <div id="global-login">	
+            <div id="login-form-div" class="center-div">
+                <h:form prependId="false">
+                   
+                    <ul class="form-list">
+                        <li class="i-left login-element" >
+                            <h:graphicImage id="new-Logo" alt="NKontacto" value="/resources/images/newLogo.png" />
+                        </li>
+                    </ul>
+
+                    <ul class="form-list login-element">
+                        <li>
+                            <h:outputLabel for="username"   styleClass="label-form-top" value="#{mymessages.userRequest}"/>
+                            <p:inputText  id="username" styleClass="login_width" value="#{loginBeanController.logged.username}" required="true" />
+                        </li>
+                    </ul>
+
+                    <ul class="form-list login-element">
+                        <li>
+                            <h:outputLabel for="password"  styleClass="label-form-top" value="#{mymessages.pwdRequest}"/>
+                            <p:password id="password" styleClass="login_width" value="#{loginBeanController.logged.password}" required="true"/>
+                        </li>
+                    </ul>
+                    <ul class="form-list bordered-bottom">
+                        <li class="i-right login-element">
+                            <p:commandButton id="loginButton" ajax="false" icon="ui-icon ui-icon-key" iconPos="right" styleClass="login_width" value="#{mymessages.intro}" action="#{loginBeanController.login}" />
+                           </li> </ul>
+                     <h:panelGroup id="messagePanelLogin" layout="block">
+                         <p:messages globalOnly="true"/>
+                </h:panelGroup>
+                </h:form>
+               
+            </div>
+
+
+
+        </div>
+    </h:body>
+</html>
+
+
+
+
+
+
+
+
+

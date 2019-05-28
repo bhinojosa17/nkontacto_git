@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:form prependId="false" id="tabMainMenu">
+   
+        <p:tabMenu  id="main" activeIndex="7"    >
+              <c:forEach var="menu" items="#{secMenuController.menusTab}" >
+                  <p:menuitem   action="#{secMenuController.updateTabView}" value="#{menu.textMenu}"   >
+           
+                </p:menuitem>
+            </c:forEach> 
+        </p:tabMenu>
+     
+    </h:form>
+</ui:composition>

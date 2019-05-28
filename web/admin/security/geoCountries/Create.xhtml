@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateGeoCountriesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateGeoCountriesLabel_countryId}" for="countryId" />
+                    <h:inputText id="countryId" value="#{geoCountriesController.selected.countryId}" title="#{bundle.CreateGeoCountriesTitle_countryId}" required="true" requiredMessage="#{bundle.CreateGeoCountriesRequiredMessage_countryId}"/>
+                    <h:outputLabel value="#{bundle.CreateGeoCountriesLabel_country}" for="country" />
+                    <h:inputText id="country" value="#{geoCountriesController.selected.country}" title="#{bundle.CreateGeoCountriesTitle_country}" required="true" requiredMessage="#{bundle.CreateGeoCountriesRequiredMessage_country}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{geoCountriesController.create}" value="#{bundle.CreateGeoCountriesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{geoCountriesController.prepareList}" value="#{bundle.CreateGeoCountriesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateGeoCountriesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

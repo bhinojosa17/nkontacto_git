@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle1.EditSecUsersProfilesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle1.EditSecUsersProfilesLabel_secUsersProfilesPK_profileId}" for="secUsersProfilesPK_profileId" />
+                    <h:inputText id="secUsersProfilesPK_profileId" value="#{secUsersProfilesController.selected.secUsersProfilesPK.profileId}" title="#{bundle1.EditSecUsersProfilesTitle_secUsersProfilesPK_profileId}" required="true" requiredMessage="#{bundle1.EditSecUsersProfilesRequiredMessage_secUsersProfilesPK_profileId}"/>
+                    <h:outputLabel value="#{bundle1.EditSecUsersProfilesLabel_secUsersProfilesPK_userId}" for="secUsersProfilesPK_userId" />
+                    <h:inputText id="secUsersProfilesPK_userId" value="#{secUsersProfilesController.selected.secUsersProfilesPK.userId}" title="#{bundle1.EditSecUsersProfilesTitle_secUsersProfilesPK_userId}" required="true" requiredMessage="#{bundle1.EditSecUsersProfilesRequiredMessage_secUsersProfilesPK_userId}"/>
+                    <h:outputLabel value="#{bundle1.EditSecUsersProfilesLabel_updatedOn}" for="updatedOn" />
+                    <h:inputText id="updatedOn" value="#{secUsersProfilesController.selected.updatedOn}" title="#{bundle1.EditSecUsersProfilesTitle_updatedOn}" required="true" requiredMessage="#{bundle1.EditSecUsersProfilesRequiredMessage_updatedOn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid>
+                <h:commandLink action="#{secUsersProfilesController.update}" value="#{bundle1.EditSecUsersProfilesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle1.EditSecUsersProfilesViewLink}"/>
+                <br />
+                <h:commandLink action="#{secUsersProfilesController.prepareList}" value="#{bundle1.EditSecUsersProfilesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle1.EditSecUsersProfilesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

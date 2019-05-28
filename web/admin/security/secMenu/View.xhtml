@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSecMenuTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_itemId}"/>
+                    <h:outputText value="#{secMenuController.selected.itemId}" title="#{bundle.ViewSecMenuTitle_itemId}"/>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_textMenu}"/>
+                    <h:outputText value="#{secMenuController.selected.textMenu}" title="#{bundle.ViewSecMenuTitle_textMenu}"/>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_idParent}"/>
+                    <h:outputText value="#{secMenuController.selected.idParent}" title="#{bundle.ViewSecMenuTitle_idParent}"/>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_link}"/>
+                    <h:outputText value="#{secMenuController.selected.link}" title="#{bundle.ViewSecMenuTitle_link}"/>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_statusReg}"/>
+                    <h:outputText value="#{secMenuController.selected.statusReg}" title="#{bundle.ViewSecMenuTitle_statusReg}"/>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_updatedOn}"/>
+                    <h:outputText value="#{secMenuController.selected.updatedOn}" title="#{bundle.ViewSecMenuTitle_updatedOn}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewSecMenuLabel_updatedBy}"/>
+                    <h:outputText value="#{secMenuController.selected.updatedBy}" title="#{bundle.ViewSecMenuTitle_updatedBy}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{secMenuController.destroyAndView}" value="#{bundle.ViewSecMenuDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewSecMenuEditLink}"/>
+                <br />
+                <h:commandLink action="#{secMenuController.prepareCreate}" value="#{bundle.ViewSecMenuCreateLink}" />
+                <br />
+                <h:commandLink action="#{secMenuController.prepareList}" value="#{bundle.ViewSecMenuShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewSecMenuIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
